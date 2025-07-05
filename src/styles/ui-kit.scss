@@ -1,0 +1,196 @@
+@import '_variables.scss';
+
+.nav {
+    &__link {
+        outline: none;
+        transition: color .3s ease-in-out, background-color .3s ease-in-out;
+        &:focus {
+            color: $colorWhite;
+            background-color: $colorBrown;
+        }
+
+        &:active {
+            color: $colorDarkOrange;
+            background-color: transparent;
+        }
+    }
+}
+
+.promo {
+    &__article-link {
+        transition: background-color .2s ease-in-out, outline .2s ease-in-out;
+
+        &:focus {
+            background-color: $colorOrange;
+            outline: 3px solid $colorDarkOrange;
+        }
+
+        &:active {
+            background-color: $colorDarkOrange;
+        }
+    }
+}
+
+.mailing {
+    &__btn {
+        transition: background-color .2s ease-in-out, outline .2s ease-in-out;
+
+        &:focus {
+            background-color: $colorOrange;
+            outline: 3px solid $colorDarkOrange;
+        }
+
+        &:active {
+            background-color: $colorDarkOrange;
+        }
+    }
+
+    &__input {
+        transition: outline .3s ease-in-out;
+        &::placeholder {
+            transition: color .3s ease-in-out;
+        }
+        
+        &:focus {
+            &::placeholder {
+                color: $colorWhite;
+            }
+        }
+
+        &:active {
+            outline: 1px solid $colorOrange;
+        }
+    }
+}
+
+.projects {
+    &__button {
+        transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+
+        &:focus {
+            border-color: $colorOrange;
+            background-color: $colorBrown;
+        }
+
+        &:active {
+            border-color: $colorDarkOrange;
+            background-color: $colorDarkOrange;
+        }
+    }
+}
+
+.contacts {
+    &__form-input, &__form-area {
+        transition: outline .3s ease-in-out;
+        &::placeholder {
+            transition: color .3s ease-in-out;
+        }
+        
+        &:focus {
+            &::placeholder {
+                color: $colorWhite;
+            }
+        }
+
+        &:active {
+            outline: 1px solid $colorOrange;
+        }
+    }
+
+    &__form-button {
+        transition: background-color .2s ease-in-out, outline .2s ease-in-out;
+
+        &:focus {
+            background-color: $colorOrange;
+            outline: 3px solid $colorDarkOrange;
+        }
+
+        &:active {
+            background-color: $colorDarkOrange;
+        }
+    }
+}
+
+.footer {
+    &__social-link {
+        color: $colorLightGrey;
+        transition: color .3s ease-in-out;
+
+        &:focus svg {
+            color: $colorBrown;
+        }
+
+        &:active svg {
+            color: $colorDarkOrange;
+        }
+    }
+
+}
+
+
+@media (any-hover: hover) {
+    .nav {
+        &__link {
+            &:hover:not(:active) {
+                color: $colorOrange;
+            }
+        }
+    }
+
+    .promo {
+        &__article-link {
+            &:hover:not(:active) {
+                background-color: $colorBrown;
+            }
+        }
+    }
+
+    .mailing {
+        &__btn {
+            &:hover:not(:active) {
+                background-color: $colorBrown;
+            }
+        }
+
+        &__input {
+            &:hover:not(:active) {
+                &::placeholder {
+                    color: $colorOrange;
+                }
+            }
+        }
+    }
+
+    .projects {
+        &__button {
+            &:hover:not(:active) {
+                background-color: $colorOrange;
+            }
+        }
+    }
+
+    .contacts {
+        &__form-input, &__form-area {
+            &:hover:not(:active) {
+                &::placeholder {
+                    color: $colorOrange;
+                }
+            }
+        }
+    
+        &__form-button {
+            &:hover:not(:active) {
+                background-color: $colorBrown;
+            }
+        }
+    }
+
+    .footer {
+        &__social-link {
+    
+            &:hover:not(:active) svg {
+                color: $colorOrange;
+            }
+        }
+    }
+}

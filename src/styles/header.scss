@@ -1,0 +1,166 @@
+@import '_mixin.scss';
+@import '_variables.scss';
+
+.header {
+    display: grid;
+    background-color: $backgroundColor;
+
+    &__container {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 24px;
+        padding-bottom: 25px;
+        gap: 140px;
+    }
+
+    &__logo {
+        max-width: 190px;
+        display: block;
+    }
+
+    &__burger {
+        display: none;
+    }
+
+    &__search {
+        height: 25px;
+        background-color: transparent;
+    }
+}
+
+.nav {
+    &__list {
+        max-width: 742px;
+        width: 100%;
+        @include clearListStyles;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    &__link {
+        font-weight: 400;
+        font-size: 16px;
+        color: $whiteTextColor;
+    }
+}
+
+.burger {
+    display: none;
+}
+
+@media (max-width: 1340px) {
+    .header {
+        &__container {
+            padding-top: 26px;
+            padding-bottom: 27px;
+            gap: 82px;
+        }
+        
+        &__wrapper {
+            max-width: 806px;
+        }
+
+        &__logo {
+            height: 27px;
+        }
+    }
+
+
+    .nav {
+        max-width: 558px;
+    }
+}
+
+@media (max-width: 930px) {
+    .header {
+        &__container {
+            max-width: 100%;
+            padding: 0;
+            grid-template-rows: auto auto;
+            gap: 0;
+        }
+
+        &__top {
+            padding: 26px 28px 27px;
+        }
+
+        &__search {
+            display: grid;
+            grid-column: 3;
+            height: auto;
+            padding: 26px 28px 25px;
+        }
+    }
+
+
+    .nav {
+        max-width: 100%;
+        grid-row: 2;
+        grid-column: span 3;
+        padding: 12px 27px;
+        background-color: grey;
+    }
+}
+
+@media (max-width: 640px) {
+    .nav {
+        display: none;
+    }
+
+    .header {
+        &__burger {
+            display: grid;
+            grid-row: 2;
+            padding: 12px 27px;
+            grid-column: span 3;
+            background-color: grey;
+        }
+
+        &__burger-btn {
+            display: grid;
+            width: 20px;
+            gap: 6px;
+            background-color: transparent;
+    
+            span {
+                width: 20px;
+                height: 2px;
+                background-color: $whiteBackgroundClor;
+    
+                &:last-child {
+                    width: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        &__logo {
+            height: 18px;
+        }
+
+        &__top {
+            padding: 26px 21px 27px;
+        }
+
+        &__search {
+            padding: 25px 21px 25px;
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        &__burger {
+            padding: 13px 21px;
+        }
+    }
+
+
+}

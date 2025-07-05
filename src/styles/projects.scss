@@ -1,0 +1,555 @@
+@import '_mixin.scss';
+@import '_variables.scss';
+
+.projects {
+    &__container {
+        padding-top: $containerPadTop;
+        padding-bottom: $containerPadBot;
+    }
+
+    &__title {
+        @include textStyles700-24;
+        @include clearTextStyles;
+
+        margin-bottom: 12px;
+        color: $blackTextColor;
+    }
+
+    &__article {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        position: relative;
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: top;
+        padding-top: 12.625rem;
+
+        &::after {
+            position: absolute;
+            max-width: 250px;
+            top: 7px;
+            right: 7px;
+            padding: 6px 14px;
+            font-family: "Roboto", Arial, sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            background-color: #202020;
+            color: #ffffff;
+        }
+    }
+
+    &__elem {
+        display: flex;
+        grid-column: span 2;
+    }
+
+    &__list {
+        @include clearListStyles;
+
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: $gap;
+    }
+
+    &__elem--retouch {
+        grid-column: span 3;
+    }
+
+    &__elem--portrait2 {
+        grid-column: span 3;
+    }
+
+    &__img {
+        img {
+            margin-bottom: 18px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 10px;
+
+        @include textStyles400-16;
+
+        line-height: 22px;
+        color: $blackTextColor;
+    }
+
+    &__date-time {
+        display: flex;
+        margin-top: auto;
+        gap: 4px;
+        @include textStyles400-12;
+
+        color: $greyTextColor;
+        
+        &::before {
+            content: '';
+            display: inline-block;
+            position: relative;
+            background-image: url('images/sprite.svg#date');
+            background-repeat: no-repeat;
+            width: 14px;
+            height: 14px;
+            top: 3px;
+            left: 0;
+        }
+    }
+
+    &__date-light {
+        color: $whiteTextColor;
+        @include textStyles400-12;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            position: relative;
+            background-image: url('images/sprite.svg#date-light');
+            background-repeat: no-repeat;
+            width: 14px;
+            height: 14px;
+            top: 2px;
+            left: 0;
+        }
+    }
+
+    &__article-title {
+        @include clearListStyles;
+        @include textStyles700-24;
+
+        line-height: 25px;
+        margin-bottom: 6px;
+    }
+
+    &__date-svg {
+        margin-right: 4px;
+
+        svg {
+            top: 50%;
+            transform: translateY(-50%)
+        }
+    }
+
+    &__article-wrapper {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        max-width: 292px;
+        width: 100%;
+        z-index: 1;
+    }
+
+    &__article--landscape {
+        background-image: url("images/landscape.webp");
+
+        &::after {
+            content: "#пейзаж";
+        }
+    }
+
+    &__article--portrait {
+        background-image: url("images/portrait.webp");
+
+        &::after {
+            content: "#портрет";
+        }
+    }
+
+    &__article--item {
+        background-image: url("images/item.webp");
+
+        &::after {
+            content: "#предмет";
+        }
+    }
+
+    &__article--retouch {
+        background-image: url("images/retouch.webp");
+
+        &::after {
+            content: "#ретушь";
+        }
+    }
+
+    &__article--portrait2 {
+        background-image: url("images/portrait2.webp");
+
+        &::after {
+            content: "#портрет";
+        }
+    }
+
+    &__article--fuji, &__article--oblivion {
+        padding: 23px 29px 30px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    
+        h3,
+        p,
+        time {
+            color: $whiteTextColor;
+        }
+    }
+
+    &__article--fuji &__text {
+        margin-top: 0;
+    }
+
+    &__article--oblivion &__text {
+        margin-top: 0;
+    }
+
+    &__article--fuji {
+        background-image: url('images/fuji.webp');
+
+        &::after {
+            content: "#fuji";
+        }
+    }
+
+    &__elem--fuji {
+        grid-column: span 6;
+    }
+
+    &__elem--oblivion {
+        grid-column: span 6;
+    }
+
+    &__article--oblivion {
+        background-image: url('images/oblivion.webp');
+
+        &::after {
+            content: "#проектзабвение";
+        }
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: max-content;
+        padding: 15px 22px;
+        margin-top: auto;
+        line-height: 18px;
+        border: 3px solid $borderButton;
+
+        @include textStyles700-16;
+        color: $whiteTextColor;
+        background-color: transparent;
+    }
+
+}
+
+
+@media (max-width: 1340px) {
+    .projects {
+        &__list {
+            grid-template-columns: repeat(24, 1fr);
+            gap: 24px 30px;
+        }
+
+        &__elem {
+            grid-column: span 6;
+        }
+
+        &__article--fuji, &__article--oblivion {
+            padding: 31px 29px 30px;
+        }
+
+        &__elem--item {
+            grid-column: span 12;
+        }
+
+        &__elem--fuji {
+            grid-column: span 15;
+        }
+
+        &__elem--oblivion {
+            grid-column: span 15;
+            order: 7;
+        }
+
+        &__elem--portrait2 {
+            grid-column: span 9;
+            order: 6;
+        }
+
+        &__elem--retouch {
+            grid-column: span 9;
+            order: 5;
+        }
+
+        &__article--fuji {
+            background-image: url('images/fuji_1024.webp');
+        }
+
+        &__article--oblivion {
+            background-image: url('images/oblivion_1024.webp');
+        }
+
+        &__article--landscape {
+            background-image: url("images/landscape_1024.webp");
+        }
+    
+        &__article--portrait {
+            background-image: url("images/portrait_1024.webp");
+        }
+    
+        &__article--item {
+            background-image: url("images/item_1024.webp");
+        }
+    
+        &__article--retouch {
+            background-image: url("images/retouch_1024.webp");
+        }
+    
+        &__article--portrait2 {
+            background-image: url("images/portrait2_1024.webp");
+        }
+
+        &__text {
+            margin-bottom: 17px;
+        }
+
+        &__button {
+            padding: 13px 21px;
+        }
+    }
+}
+
+@media (max-width: 930px) {
+    .projects {
+        &__list {
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(4, auto);
+            gap: 27px 30px;
+        }
+
+        &__elem {
+            grid-column: span 4;
+        }
+
+        &__elem--item {
+            grid-column: span 4;
+        }
+
+        &__elem--fuji {
+            grid-column: span 12;
+        }
+
+        &__elem--retouch {
+            grid-column: span 6;
+        }
+
+        &__elem--portrait2 {
+            grid-column: span 6;
+        }
+
+        &__elem--oblivion {
+            grid-column: span 12;
+        }
+
+        &__article--oblivion, &__article--fuji {
+            min-height: 300px;
+        }
+
+        &__article--fuji {
+            background-image: url('images/fuji_768.webp');
+        }
+
+        &__article--oblivion {
+            background-image: url('images/oblivion_768.webp');
+        }
+
+        &__article--landscape {
+            background-image: url("images/landscape_1024.webp");
+        }
+    
+        &__article--portrait {
+            background-image: url("images/portrait_1024.webp");
+        }
+    
+        &__article--item {
+            background-image: url("images/item_768.webp");
+        }
+    
+        &__article--retouch {
+            background-image: url("images/retouch_768.webp");
+        }
+    
+        &__article--portrait2 {
+            background-image: url("images/portrait2_768.webp");
+        }
+
+        &__text {
+            margin-bottom: 12px;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .projects {
+
+        &__text {
+            font-size: 14px;
+            line-height: 18px;
+            margin-bottom: 8px;
+        }
+
+        &__button {
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .projects {
+        &__container {
+            padding-top: 50px;
+            padding-bottom: 34px;
+        }
+
+        &__title {
+            font-size: 18px;
+            line-height: 23px;
+            margin-bottom: 16px;
+        }
+
+        &__list {
+            grid-template-columns: 1fr;
+            gap: 19px;
+        }
+
+        &__elem {
+            grid-column: auto;
+        }
+
+        &__elem--item {
+            grid-column: auto;
+        }
+
+        &__elem--fuji {
+            grid-column: auto;
+        }
+
+        &__elem--retouch {
+            grid-column: auto;
+        }
+
+        &__elem--portrait2 {
+            grid-column: auto;
+        }
+
+        &__elem--oblivion {
+            grid-column: auto;
+        }
+
+        &__article {
+            padding-top: calc(313 / 430* 100%);
+            background-size: contain;
+
+            &::after {
+                top: 5px;
+                right: 5px;
+                padding: 4px 14px;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+            }
+        }
+
+        &__article-wrapper {
+            max-width: max-content;
+        }
+
+        &__article--fuji,
+        &__article--oblivion {
+            padding: 30px;
+            background-size: cover;
+        }
+
+        &__article--fuji {
+            background-image: url('images/fuji_320.webp');
+        }
+
+        &__article--oblivion {
+            background-image: url('images/oblivion_320.webp');
+        }
+
+        &__article--landscape {
+            background-image: url("images/landscape_320.webp");
+        }
+    
+        &__article--portrait {
+            background-image: url("images/portrait_320.webp");
+        }
+    
+        &__article--item {
+            background-image: url("images/item_320.webp");
+        }
+    
+        &__article--retouch {
+            background-image: url("images/retouch_320.webp");
+        }
+    
+        &__article--portrait2 {
+            background-image: url("images/portrait2_320.webp");
+        }
+
+        &__article-title {
+            line-height: 24px;
+        }
+
+        &__elem--oblivion, &__elem--fuji {
+            min-height: 422px;
+        }
+
+        &__elem--oblivion &__article-wrapper {
+            justify-content: end;
+        }
+
+        &__elem--fuji &__article-wrapper {
+            justify-content: end;
+        }
+
+        &__date-light {
+            margin-bottom: 5px;
+        }
+
+        &__elem--oblivion &__text {
+            @include textStyles400-14;
+            line-height: 18px;
+            margin-bottom: 22px;
+        }
+
+        &__elem--fuji &__text {
+            @include textStyles400-14;
+            line-height: 18px;
+            margin-bottom: 16px;
+        }
+
+
+        &__date-time {
+            margin-bottom: 7px;
+            color: $greyTextColor;
+        }
+
+        &__article-title {
+            margin-bottom: 9px;
+        }
+
+        &__text {
+            margin-bottom: 10px;
+            font-size: 16px;
+            line-height: 22px;
+        }
+
+        &__button {
+            margin: 0;
+            padding: 10px 20px;;
+        }
+    }
+}

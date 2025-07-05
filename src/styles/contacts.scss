@@ -1,0 +1,353 @@
+@import '_mixin.scss';
+@import '_variables.scss';
+
+.contacts {
+    &__container {
+        padding-bottom: $containerPadBot;
+    }
+
+    &__title {
+        @include clearTextStyles;
+        margin-bottom: 22px;
+
+        @include textStyles700-24;
+        color: $blackTextColor;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns:  1fr 1fr 1fr;
+        gap: $gap;
+    }
+
+    &__left {
+        position: relative;
+        grid-column: span 2;
+    }
+
+    &__img {
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+    }
+
+    &__info {    
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding: 86px 78px 60px 58px;
+        max-width: 410px;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: #202020D9;
+    }
+
+    &__info-title {
+        @include clearListStyles;
+        @include textStyles400-24;
+
+        margin-bottom: 5px;
+        line-height: 22px;
+        color: $whiteTextColor;
+    }
+
+    &__info-address {
+        @include textStyles400-16;
+    
+        line-height: 28px;
+        color: $colorText;
+    }
+
+    &__info-tel {
+        display: flex;
+        @include textStyles400-16;
+        font-family: "TTFirsNeue", Arial, sans-serif;
+        font-style: normal;
+
+        color: $colorTel;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            position: relative;
+            width: 22px;
+            height: 22px;
+            left: 0;
+            top: 0;
+            background-image: url("images/sprite.svg#phone");
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__info-close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        background-color: transparent;
+    }
+
+    &__right {
+        margin-top: -5px;
+    }
+
+    &__right-title {
+        @include clearTextStyles;
+        margin-bottom: 5px;
+        @include textStyles400-24;
+
+        line-height: 22px;
+        color: $backgroundColor;
+    }
+
+    &__left-text {
+        margin-bottom: 14px;
+        @include textStyles400-16;
+
+        line-height: 22px;
+        color: $greyTextColor;
+    }
+
+    &__form-input {
+        @include textStyles400-16;
+
+        max-width: 410px;
+        width: 100%;
+        padding: 15px 21px 16px;
+        margin-bottom: 20px;
+        background-color: $backgroundColorGrey;
+        color: $blackTextColor;
+
+        &::placeholder {
+            @include textStyles400-16;
+
+            color: $greyTextColor;
+        }
+    }
+
+    &__form-area {
+        @include textStyles400-16;
+
+        max-width: 410px;
+        width: 100%;
+        min-height: 150px;
+        padding: 14px 21px 16px;
+        margin-bottom: 15px;
+        resize: none;
+        background-color: $backgroundColorGrey;
+        color: $blackTextColor;
+
+        &::placeholder {
+            @include textStyles400-16;
+
+            color: $greyTextColor;
+        }
+    }
+
+    &__form-button {
+        @include textStyles700-16;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: max-content;
+        padding: 15px 22px;
+        border: none;
+        color: $whiteTextColor;
+        background-color: $backgroundColorBtn;
+    }
+}
+
+@media (max-width: 1340px) {
+    .contacts {
+        &__wrapper {
+            grid-template-columns: minmax(342px, 590px) minmax(342px, 1fr);
+        }
+
+        &__left {
+            display: grid;
+            grid-column: auto;
+            grid-template-rows: 1fr auto;
+        }
+
+        &__left-text {
+            margin-bottom: 15px;
+        }
+
+        &__info {
+            grid-row: 2;
+            max-width: none;
+            padding: 24px 30px 18px;
+        }
+
+        &__info-tel {
+            display: inline;
+        
+            &::before {
+                top: 5px;
+            }
+        }
+
+        &__info-wrapper {
+            max-width: 305px;
+        }
+
+        &__right {
+            margin-top: -8px;
+        }
+    }
+}
+
+@media (max-width: 930px) {
+    .contacts {
+        &__wrapper {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
+            gap: 24px;
+        }
+
+        &__left {
+            min-height: 460px;
+        }
+
+        &__info {
+            padding: 26px 30px 20px;
+        }
+
+        &__info-tel {
+            display: flex;
+        }
+
+        &__right {
+            margin: 0;
+            max-width: 466px;
+            width: 100%;
+        }
+
+        &__form-input {
+            max-width: 466px;
+            width: 100%;
+        }
+
+        &__form-area {
+            max-width: 466px;
+            width: 100%;
+        }
+
+        &__info-wrapper {
+            max-width: 436px;
+        }
+
+    }
+}
+
+@media (max-width: 640px) {
+    .contacts {
+        &__right {
+            max-width: 100%;
+        }
+
+        &__form-input, &__form-area {
+            max-width: 100%;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .contacts {
+        &__container {
+            padding: 0;
+            padding-bottom: 50px;
+        }
+
+        &__wrapper {
+            gap: 23px;
+        }
+
+        &__title {
+            margin-bottom: 13px;
+            padding: 0 21px;
+            font-size: 18px;
+            line-height: 23px;
+        }
+
+        &__left {
+            min-height: 472px;
+        }
+
+        &__info {
+            padding: 24px 19px 14px;
+        }
+
+        &__info-title {
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 10px;
+        }
+
+        &__info-address {
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        &__info-tel {
+            align-items: center;
+            padding-top: 11px;
+            font-size: 14px;    
+            line-height: 18px;
+
+            &::before {
+                top: 0;
+            }
+        }
+
+        &__right {
+            padding: 0 21px;
+        }
+
+        &__right-title {
+            margin-bottom: 7px;
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        &__left-text {
+            margin-bottom: 16px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+
+        &__form-input {
+            padding: 12px 23px;
+            font-size: 14px;
+            line-height: 16px;
+
+            &::placeholder {
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+
+        &__form-area {
+            font-size: 14px;
+            line-height: 16px;
+
+            &::placeholder {
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+
+        &__form-button {
+            padding: 12px 23px;
+            font-size: 14px;
+            line-height: 16px;
+        }
+    }
+}

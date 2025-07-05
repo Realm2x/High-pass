@@ -1,0 +1,148 @@
+@import '_mixin.scss';
+@import '_variables.scss';
+
+.footer {
+    background-color: $backgroundColor;
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        min-height: 106px;
+    }
+
+    &__logo {
+        max-width: 190px;
+        display: block;
+        margin-bottom: 6px;
+    }
+
+    &__logo-text {
+        @include textStyles400-14;
+        font-family: "TTFirsNeue", Arial, sans-serif;
+
+        color: $colorTextGrey;
+    }
+
+    &__descr {
+        max-width: 361px;
+        width: 100%;
+        margin-left: 11px;
+        margin-top: 10px;
+    }
+
+    &__descr-text {
+        @include textStyles400-16;
+        
+        line-height: 22px;
+        color: $colorText;
+        font-style: normal;
+    }
+
+    &__social {
+        display: grid;
+        justify-content: end;
+    }
+
+    &__social-text {
+        margin-bottom: 8px;
+
+        @include textStyles400-16;
+        line-height: 22px;
+        color: $colorText;
+    }
+
+    &__social-wrapper {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: auto auto;
+        gap: 20px;
+    }
+
+    &__social-link {
+        display: grid;
+        width: fit-content;
+    }
+}
+
+@media (max-width: 1340px) {
+    .footer {
+        &__container {
+            grid-template-columns: auto 1fr auto;
+            gap: 87px;
+        }
+
+        &__descr {
+            display: grid;
+            justify-content: end;
+            max-width: none;
+        }
+
+        &__logo-wrapper {
+            display: grid;
+        }
+
+        &__logo {
+            display: grid;
+            margin-top: 5px;
+        }
+    }
+
+    .logo-img {
+        width: 166px;
+    }
+}
+
+@media (max-width: 930px) {
+    .footer {
+        &__container {
+            grid-template-columns: auto auto;
+            height: 109px;
+        }
+
+        &__descr {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .footer {
+        &__container {
+            grid-template-rows: auto auto;
+            height: auto;
+            padding: 0;
+            gap: 0;
+        }
+
+        &__logo-wrapper {
+            justify-content: center;
+            grid-row: 2;
+            grid-column: span 2;
+            padding: 14px 0;
+            background-color: $backgroundColorFooterMobile;
+        }
+
+        &__logo {
+            justify-content: center;
+            margin: 0;
+            margin-bottom: 3px;
+        }
+
+        &__logo-text {
+            font-size: 10px;
+            line-height: 13px;
+
+        }
+
+        &__social {
+            grid-column: span 2;
+            justify-content: center;
+            padding: 31px 32px;
+        }
+    }
+
+    .logo-img {
+        width: 112px;
+    }
+}

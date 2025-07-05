@@ -1,0 +1,127 @@
+@import '_variables.scss';
+@import '_mixin.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "TTFirsNeue";
+    font-weight: 400;
+    font-style: normal;
+    src:local("TTFirsNeue-Regular"),url("../fonts/TTFirsNeue-Regular.woff2") format("woff2"),url("../fonts/TTFirsNeue-Regular.woff") format("woff");
+    font-display:swap
+}
+
+@font-face {
+    font-family: "TTFirsNeue";
+    font-weight: 600;
+    font-style: normal;
+    src:local("TTFirsNeue-Medium"),url("../fonts/TTFirsNeue-Medium.woff2") format("woff2"),url("../fonts/TTFirsNeue-Medium.woff") format("woff");
+    font-display:swap;
+}
+
+@font-face {
+    font-family: "TTFirsNeue";
+    font-weight: 700;
+    font-style: normal;
+    src:local("Montserrat-Bold"),url("../fonts/TTFirsNeue-Bold.woff2") format("woff2"),url("../fonts/TTFirsNeue-Bold.woff") format("woff");font-display:swap
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-weight: 400;
+    font-style: normal;
+    src:local("Roboto-Bold"),url("../fonts/Roboto-Regular.woff2") format("woff2"),url("../fonts/Roboto-Regular.woff") format("woff");font-display:swap
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "TTFirsNeue", "Roboto", Arial, sans-serif;
+    min-width: 320px;
+}
+
+p,
+ul,
+li {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    max-width: $containerMaxWidth;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.visible-hidden {
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    padding: 0; 
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+input,
+textarea {
+    border: none;
+}
+
+blockquote {
+    margin: 0;
+}
+
+picture {
+    display: flex;
+}
+
+address {
+    font-style: normal;
+}
+
+button {
+    border: none;
+    padding: 0;
+}
+
+label {
+    display: none;
+}
+
+@media (max-width: 1340px) {
+    .container {
+        max-width: 1024px;
+        padding-right: 31px;
+        padding-left: 31px;
+    }
+}
+
+@media (max-width: 930px) {
+    .container {
+        max-width: 768px;
+        padding-right: 27px;
+        padding-left: 27px;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding-right: 21px;
+        padding-left: 21px;
+    }
+}

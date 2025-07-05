@@ -1,0 +1,65 @@
+@mixin clearListStyles {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin clearTextStyles {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin textStyles400-12 {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22px;
+}
+
+@mixin textStyles400-14 {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+@mixin textStyles400-16 {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+@mixin textStyles400-24 {
+    font-family: "TTFirsNeue", Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+@mixin textStyles700-14 {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+@mixin textStyles700-16 {
+    font-family: "Roboto", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+@mixin textStyles700-24 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 31px;
+}
+
+@mixin textStyles700-34 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+@mixin textStyles700-36 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 37px;
+}

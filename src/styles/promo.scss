@@ -1,0 +1,273 @@
+@import '_mixin.scss';
+@import '_variables.scss';
+
+.promo {
+    &__container {
+        padding-top: 41px;
+        padding-bottom: $containerPadBot;
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(auto, auto);
+        gap: $gap;
+    }
+
+    &__item {
+        display: flex;
+    }
+
+    &__item-title {
+        @include clearTextStyles;
+
+        margin-bottom: 18px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 25px;
+    }
+
+    &__item-left {
+        display: flex;
+    }
+
+    &__right-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__list {
+        @include clearListStyles;
+        
+        display: grid;
+        flex: 1;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(auto, auto);
+        gap: $gap;
+    }
+
+    &__item-top {
+        grid-column: span 2;
+    }
+
+    &__article {
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+        background-image: url("images/promo-1.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        &::after {
+            content: '#мастеркласс';
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            padding: 7px 15px;
+
+            @include textStyles400-14;
+
+            color: $whiteTextColor;
+            background-color: $backgroundColor;
+        }
+        
+    }
+
+    &__article-img {
+        display: flex;
+    }
+
+    &__article-content {
+        display: flex;
+        flex-direction: column;
+        padding: 61px 61px;
+        z-index: 1;
+    }
+
+    &__article-text {
+        @include clearTextStyles;
+        @include textStyles400-16;
+
+        margin-bottom: 9px;
+        color: $whiteTextColor;
+    }
+
+    &__article-title {
+        @include clearTextStyles;
+        @include textStyles700-36;
+
+        margin-bottom: 19px;
+        color: $whiteTextColor;
+    }
+
+    &__article-link {
+        @include textStyles700-16;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: flex-start;
+        padding: 15px 22px;
+        color: $whiteTextColor;
+        background-color: $backgroundColorBtn;
+    }
+}
+
+@media (max-width: 1340px) {
+    .promo {
+        &__container {
+            padding-top: 34px;
+        }
+
+        &__item-title {
+            margin-bottom: 25px;
+        }
+
+        &__article {
+            background-image: url("images/promo-1_1024.webp");
+        }
+
+        &__article-content {
+            padding: 30px 30px 30px;
+        }
+        &__article-title {
+            margin-bottom: 22px;
+            font-size: 34px;
+            line-height: 34px;
+        }
+    }
+}
+
+@media (max-width: 930px) {
+    .promo {
+        &__container {
+            padding-top: 36px;
+        }
+
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+        }
+
+        &__article {
+            max-width: 342px;
+        }
+
+        &__article-img {
+            img {
+                height: 100%;
+            }
+        }
+
+        &__article-text {
+            margin-bottom: 14px;
+        }
+
+        &__article-title {
+            margin-bottom: 23px;
+            line-height: 31px;
+        }
+
+        &__item-title {
+            margin-bottom: 17px;
+            font-size: 22px;
+            line-height: 22px;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .promo {
+        &__item-left {
+            justify-content: center;
+        }
+
+        &__content {
+            grid-template-columns: 1fr;
+        }
+
+        &__item-title {
+            max-width: 278px;
+            font-size: 18px;
+            line-height: 19px;
+        }
+
+        &__article {
+            width: 100%;
+            max-width: 100%;
+            min-height: 422px;
+        }
+
+        &__item {
+            picture {
+                flex: 1;
+            }
+        }
+
+        &__article-img {
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .promo {
+        &__container {
+            padding-top: 30px;
+            padding-bottom: 50px;
+        }
+
+        &__content {
+            gap: 34px;
+        }
+
+        &__item-title {
+            margin-bottom: 16px;
+        }
+
+        &__article {       
+            background-image: url(images/promo-1_320.webp);
+
+            &::after {
+                right: 5px;
+                top: 6px;
+                padding: 6px 7px;
+    
+                @include textStyles400-12;
+                line-height: 14px;
+                color: $whiteTextColor;
+                background-color: $backgroundColor;
+            }
+        }
+
+        &__article-content {
+            justify-content: end;
+        }
+
+        &__article-text {
+            margin-bottom: 10px;
+
+            @include textStyles400-14;
+            line-height: 16px;
+        }
+
+        &__article-title {
+            margin-bottom: 14px;
+
+            @include textStyles700-24;
+            line-height: 26px;
+        }
+
+        &__article-link {
+            padding: 12px 22px;
+
+            @include textStyles700-14;
+            line-height: 16px;
+        }
+    }
+
+    
+}
